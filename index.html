@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Của Tôi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <div class="vscode-container">
+
+        <div class="activity-bar">
+            <div class="icon active"><i class="fa-regular fa-file-lines"></i></div>
+            <div class="icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+            <div class="icon"><i class="fa-solid fa-code-branch"></i></div>
+            <div class="icon"><i class="fa-solid fa-play"></i></div>
+        </div>
+
+        <div class="sidebar">
+            <div class="sidebar-header">
+                EXPLORER
+            </div>
+            <div class="file-list">
+                <ul>
+                    <li><a href="#welcome" class="file-item"><i class="fa-brands fa-markdown"></i> welcome.md</a></li>
+                    <li><a href="#about" class="file-item"><i class="fa-brands fa-html5"></i> thong-tin-ca-nhan.html</a></li>
+                    <li><a href="#skills" class="file-item"><i class="fa-brands fa-js"></i> ky-nang.js</a></li>
+                    <li><a href="#certs" class="file-item"><i class="fa-solid fa-award"></i> chung-chi.txt</a></li>
+                    <li><a href="#projects" class="file-item"><i class="fa-brands fa-react"></i> du-an.jsx</a></li>
+                    <li><a href="#contact" class="file-item"><i class="fa-solid fa-share-nodes"></i> lien-he.json</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="tabs">
+                <div class="tab active">
+                    <i class="fa-brands fa-markdown"></i> welcome.md <i class="fa-solid fa-xmark close-icon"></i>
+                </div>
+            </div>
+
+            <div class="editor-area">
+                
+                <div id="welcome" class="editor-content active">
+                    <div class="welcome-container">
+                        <div class="welcome-photos">
+                            <img src="images/cd1.jpg" alt="Ảnh cá nhân 1">
+                            <img src="images/cd2.jpg" alt="Ảnh cá nhân 2">
+                            <img src="images/cd3.jpg" alt="Ảnh cá nhân 3">
+                            <img src="images/cd4.jpg" alt="Ảnh cá nhân 4">
+                        </div>
+                        <div class="welcome-code">
+                            <pre><code>
+<span class="comment">/*
+ * Chào mừng bạn đến với Portfolio của tôi!
+ * Tôi là một Software Engineer tương lai
+ * với đam mê xây dựng các sản phẩm có giá trị.
+ */</span>
+
+<span class="variable">const</span> ten = <span class="string">"Trần Minh Hưởng"</span>; <span class="comment">//</span>
+<span class="variable">const</span> nganhHoc = <span class="string">"Công Nghệ Thông Tin"</span>;
+<span class="variable">const</span> ngaySinh = <span class="string">"07/04/2005"</span>; <span class="comment">//</span>
+
+<span class="variable">const</span> gioiThieu = {
+    hoTen: ten,
+    chuyenNganh: nganhHoc,
+    truong: <span class="string">"Đại Học Giao Thông Vận Tải TP.HCM (UTH)"</span> <span class="comment">//</span>
+};
+
+<span class="comment">// Mục tiêu nghề nghiệp của tôi</span>
+<span class="variable">const</span> mucTieu = [
+    <span class="string">"Trở thành 1 lập trình viên software engineer chuyên nghiệp."</span>,
+    <span class="string">"Áp dụng kiến thức đã học để tạo ra các sản phẩm phần mềm có giá trị."</span>,
+    <span class="string">"Phát triển kỹ năng Tech Lead, dẫn dắt đội nhóm theo quy trình Agile."</span>
+];
+
+<span class="comment">// Nhấn vào các file bên trái 
+// để xem thêm thông tin chi tiết.</span>
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="about" class="editor-content">
+                    <h1>Thông tin cá nhân & Sở thích</h1>
+                    
+                    <div class="about-container">
+                        
+                        <div class="about-left">
+                            <ul class="info-list">
+                                <li>
+                                    <i class="fa-solid fa-user"></i>
+                                    <strong>Họ và tên:</strong>
+                                    <span>Trần Minh Hưởng</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    <strong>Ngày sinh:</strong>
+                                    <span>07/04/2005</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <strong>Địa chỉ:</strong>
+                                    <span>Số 32 Đường 34, Linh Đông, Thủ Đức, TP.HCM</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <strong>Email:</strong>
+                                    <span>huongdolli714@gmail.com</span>
+                                </li>
+                            </ul>
+        
+                            <br>
+                            <h2>Sở thích </h2>
+                            
+                            <ul class="hobby-list">
+                                <li><i class="fa-solid fa-film"></i> Xem Phim</li>
+                                <li><i class="fa-solid fa-book-open"></i> Đọc Truyện</li>
+                                <li><i class="fa-solid fa-futbol"></i> Chơi thể thao (Bóng đá)</li>
+                                <li><i class="fa-solid fa-laptop-code"></i> Thích viết code</li>
+                                <li><i class="fa-solid fa-magnifying-glass-chart"></i> Tìm hiểu công nghệ mới</li>
+                            </ul>
+                        </div>
+
+                        <div class="about-right">
+                            <img src="images/cd5.jpg" alt="Ảnh cá nhân" class="profile-image">
+                        </div>
+
+                    </div>
+                </div>
+                
+                <div id="skills" class="editor-content">
+                    <h1>Kỹ năng & Ngôn ngữ </h1>
+                    
+                    <h2>Ngôn ngữ</h2>
+                    <ul class="skill-list">
+                        <li><i class="fa-brands fa-js"></i> Javascript</li>
+                        <li><i class="fa-brands fa-dart"></i> Dart</li>
+                        <li><i class="fa-solid fa-plus"></i> C++</li> </ul>
+
+                    <h2>Công nghệ & Framework</h2>
+                    <ul class="skill-list">
+                        <li><i class="fa-brands fa-html5"></i> HTML/CSS</li>
+                        <li><i class="fa-brands fa-git-alt"></i> Git</li>
+                        <li><i class="fa-brands fa-flutter"></i> Flutter</li>
+                        <li><i class="fa-solid fa-database"></i> Cơ sở dữ liệu SQL</li>
+                    </ul>
+                </div>
+
+                <div id="certs" class="editor-content">
+                    <h1>Chứng chỉ - Giải thưởng </h1>
+                    <p>Không có</p>
+                </div>
+
+                <div id="projects" class="editor-content">
+                    <h1>Dự án cá nhân </h1>
+                    <hr>
+                    <h2>1. Thiết kế ứng dụng Game Caro (4 người chơi)</h2>
+                    
+                    <p><strong>Mô tả:</strong> Trải nghiệm Cờ Caro quen thuộc nay bùng nổ với 4 người chơi cùng lúc, biến bàn cờ cổ điển thành một đấu trường chiến thuật hỗn loạn và đầy kịch tính. Cạnh tranh khốc liệt để trở thành người đầu tiên xếp được 5 quân cờ liên tiếp và giành chiến thắng.</p>
+                    
+                    <h3>Công nghệ sử dụng:</h3>
+                    <ul>
+                        <li><strong>Ngôn ngữ:</strong> C#, Dart</li>
+                        <li><strong>Frameworks:</strong> .NET 9.0, Flutter</li>
+                        <li><strong>Mạng (Networking):</strong> Lập trình TCP Socket, System.Text.Json</li>
+                        <li><strong>Quản lý Trạng thái (Flutter):</strong> Provider</li>
+                        <li><strong>Lưu trữ Cục bộ (Flutter):</strong> SQLite (sqflite), Shared Preferences</li>
+                    </ul>
+                    <p>
+                        <strong><i class="fa-brands fa-github"></i> Link Github:</strong> 
+                        <a href="https://github.com/NguyenPhat-NT/GameCaro.git" target="_blank">NguyenPhat-NT/GameCaro.git</a>
+                    </p>
+
+                    <br>
+                    <hr>
+                    <h2>2. Thiết kế Game Pong (Client-Server)</h2>
+                    <p><strong>Mô tả:</strong> Pong là một trò chơi điện tử arcade mô phỏng bóng bàn với đồ họa 2D đơn giản. Người chơi điều khiển các thanh vợt di chuyển lên xuống để đánh bóng qua lại. Đây là dự án xây dựng lại game Pong theo mô hình Client-Server.</p>
+                    
+                    <h3>Công nghệ sử dụng:</h3>
+                    <ul>
+                        <li><strong>Ngôn ngữ:</strong> Python (Client), C# (Server)</li>
+                        <li><strong>Framework/Thư viện:</strong> Pygame (Client), .NET 9.0 (Server)</li>
+                        <li><strong>Networking:</strong> TCP Sockets, JSON, asyncio (Client), async/await (Server)</li>
+                        <li><strong>Xử lý JSON (Server):</strong> Newtonsoft.Json</li>
+                        <li><strong>Đồ họa & Âm thanh (Client):</strong> Pygame</li>
+                    </ul>
+                    <p>
+                        <strong><i class="fa-brands fa-github"></i> Link Github:</strong> 
+                        <a href="https://github.com/NguyenPhat-NT/Game-Pong-Classic.git" target="_blank">NguyenPhat-NT/Game-Pong-Classic.git</a>
+                    </p>
+                </div>
+
+                <div id="contact" class="editor-content">
+                    <h1>Liên hệ (Yêu cầu 9)</h1>
+                    
+                    <ul class="info-list">
+                        <li>
+                            <i class="fa-brands fa-github"></i>
+                            <strong>Github:</strong>
+                            <a href="https://github.com/HuongTranNT" target="_blank">https://github.com/HuongTranNT</a>
+                        </li>
+                         <li>
+                            <i class="fa-brands fa-facebook"></i>
+                            <strong>Facebook:</strong>
+                            <a href="https://www.facebook.com/huong.minh.tran.420153" target="_blank">https://www.facebook.com/huong.minh.tran.420153</a>
+                        </li>
+                         <li>
+                            <i class="fa-regular fa-envelope"></i>
+                            <strong>Email:</strong>
+                            <a href="mailto:huongdolli714@gmail.com">huongdolli714@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="status-bar">
+            <div class="status-left">
+                <i class="fa-solid fa-code-branch"></i> main
+            </div>
+            <div class="status-right">
+                UTF-8 | LF | HTML
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

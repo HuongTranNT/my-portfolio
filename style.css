@@ -1,0 +1,343 @@
+/* --- Thiết lập cơ bản & Font chữ --- */
+body {
+    margin: 0;
+    font-family: 'Consolas', 'Courier New', monospace;
+    /* Đây là màu nền chính của VS Code */
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    overflow: hidden; /* Ẩn cuộn của body */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* --- Bố cục chính dùng CSS GRID --- */
+.vscode-container {
+    display: grid;
+    height: 100vh; /* Cao 100% màn hình */
+    
+    /* Cột: Activity (50px) | Sidebar (250px) | Main (1fr - phần còn lại) */
+    grid-template-columns: 50px 250px 1fr;
+    
+    /* Hàng: Nội dung (1fr - phần còn lại) | Status Bar (30px) */
+    grid-template-rows: 1fr 30px;
+    
+    /* Định nghĩa tên cho các khu vực */
+    grid-template-areas:
+        "activity sidebar main"
+        "status status status";
+}
+
+/* --- Gán khu vực cho các thành phần --- */
+.activity-bar { grid-area: activity; }
+.sidebar { grid-area: sidebar; }
+.main-content { grid-area: main; }
+.status-bar { grid-area: status; }
+
+/* --- 1. Style cho Activity Bar --- */
+.activity-bar {
+    background-color: #333333;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    align-items: center;
+}
+.activity-bar .icon {
+    font-size: 24px;
+    padding: 12px;
+    cursor: pointer;
+    color: #858585;
+}
+.activity-bar .icon.active {
+    color: #ffffff;
+}
+
+/* --- 2. Style cho Sidebar (Navbar) --- */
+.sidebar {
+    background-color: #252526;
+    border-right: 1px solid #3c3c3c;
+    overflow-y: auto;
+}
+.sidebar-header {
+    padding: 10px 15px;
+    font-size: 11px;
+    font-weight: bold;
+    color: #cccccc;
+    letter-spacing: 1px;
+}
+.file-list .file-item {
+    display: block;
+    padding: 6px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    
+    /* Yêu cầu nâng cao: Dùng transition cho hiệu ứng mượt */
+    transition: background-color 0.2s ease;
+}
+.file-list .file-item:hover {
+    background-color: #37373d;
+}
+.file-list .file-item i {
+    margin-right: 8px;
+    width: 16px; /* Giữ cho text thẳng hàng */
+    text-align: center;
+    color: #c5c5c5;
+}
+/* Màu icon (giả lập theo loại file) */
+.file-item[href="#about"] i { color: #e34c26; } /* HTML */
+.file-item[href="#skills"] i { color: #f0db4f; } /* JS */
+.file-item[href="#projects"] i { color: #61dafb; } /* React */
+.file-item[href="#contact"] i { color: #f0db4f; } /* JSON */
+
+/* --- 3. Style cho Main Content (Editor) --- */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 0; /* !!! SỬA LỖI CUỘN TRANG */
+}
+.tabs {
+    display: flex;
+    background-color: #2d2d2d;
+}
+.tab {
+    background-color: #1e1e1e;
+    padding: 8px 15px;
+    font-size: 13px;
+    border-right: 1px solid #2d2d2d;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.tab i {
+    margin-right: 6px;
+}
+.tab .close-icon {
+    font-size: 12px;
+    margin-left: 10px;
+    padding: 2px;
+    border-radius: 4px;
+}
+.tab .close-icon:hover {
+    background-color: #333333;
+}
+.tab.active {
+    background-color: #1e1e1e;
+}
+.tab:not(.active) {
+    background-color: #2d2d2d;
+    color: #969696;
+}
+
+.editor-area {
+    flex-grow: 1; /* Lấp đầy phần còn lại */
+    padding: 20px 25px; /* Tăng padding cho đẹp */
+    overflow-y: auto; /* !!! SỬA LỖI CUỘN TRANG */
+}
+/* Ẩn tất cả nội dung đi */
+.editor-content {
+    display: none;
+    /* Thêm style cơ bản cho các trang nội dung */
+    color: #d4d4d4;
+    /* Xóa overflow-y và height ở đây */
+}
+/* Chỉ hiện nội dung của tab active */
+.editor-content.active {
+    display: block;
+}
+
+/* Style cho code (giả lập syntax highlight) */
+pre {
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+}
+.comment { color: #6a9955; }
+.variable { color: #569cd6; }
+.string { color: #ce9178; }
+
+/* --- 4. Style cho Status Bar --- */
+.status-bar {
+    background-color: #007acc;
+    color: white;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+.status-left, .status-right {
+    display: flex;
+    align-items: center;
+}
+.status-left i {
+    margin-right: 5px;
+}
+
+/* --- Style cho nội dung trang Welcome --- */
+.welcome-container {
+    display: flex; /* Dùng Flexbox để chia 2 cột */
+    gap: 20px; /* Khoảng cách giữa 2 cột */
+    height: 100%;
+}
+
+.welcome-photos {
+    flex: 1; /* Cột ảnh chiếm 1 phần */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 cột bằng nhau */
+    grid-template-rows: auto auto; /* 2 hàng tự động */
+    gap: 10px; /* Khoảng cách giữa các ảnh */
+}
+
+.welcome-photos img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 4px;
+    border: 1px solid #3c3c3c;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.welcome-photos img:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    z-index: 10; 
+}
+
+.welcome-code {
+    flex: 1; /* Cột code chiếm 1 phần */
+    overflow-y: auto; 
+    padding-left: 15px;
+    border-left: 1px solid #3c3c3c;
+}
+
+/* Đảm bảo nội dung welcome lấp đầy */
+.editor-content#welcome {
+    height: calc(100% - 15px); /* Lấp đầy chiều cao editor */
+}
+
+/* --- Style cho các link trong khu vực editor --- */
+.editor-content a {
+    color: #4e94ce; /* Màu xanh dương cho link */
+    text-decoration: none;
+}
+
+.editor-content a:hover {
+    text-decoration: underline; /* Gạch chân khi di chuột */
+}
+
+/* --- Style cho trang "Thông tin cá nhân" & "Liên hệ" --- */
+.info-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 25px; 
+}
+
+.info-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px; 
+    font-size: 14px;
+}
+
+.info-list li i {
+    width: 30px; 
+    text-align: center;
+    margin-right: 10px;
+    color: #4e94ce; 
+    font-size: 16px;
+}
+
+.info-list li strong {
+    color: #9cdcfe; 
+    min-width: 110px; 
+}
+
+.info-list li span, .info-list li a {
+    color: #d4d4d4; 
+}
+
+/* --- Style cho "Sở thích" & "Kỹ năng" (Dạng tag/badge) --- */
+.hobby-list, .skill-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 10px; 
+}
+
+.hobby-list li, .skill-list li {
+    background-color: #37373d; 
+    color: #cccccc;
+    padding: 8px 14px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.hobby-list li:hover, .skill-list li:hover {
+    transform: translateY(-2px); 
+    background-color: #007acc; 
+    color: #ffffff;
+    cursor: default;
+}
+
+/* --- Yêu cầu 16: Thêm Animation khi chuyển tab --- */
+@keyframes fadeInContent {
+    from {
+        opacity: 0;
+        transform: translateY(10px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.editor-content#about,
+.editor-content#skills,
+.editor-content#certs,
+.editor-content#projects,
+.editor-content#contact {
+    animation: fadeInContent 0.5s ease-out;
+}
+
+/* --- Style mới cho layout trang "Thông tin cá nhân" --- */
+.about-container {
+    display: flex;
+    gap: 30px; /* Khoảng cách giữa 2 cột */
+    margin-top: 20px;
+    align-items: flex-start; /* Căn lề trên cùng */
+}
+
+.about-left {
+    flex: 2; /* Cột trái chiếm 2 phần (rộng hơn) */
+}
+
+.about-right {
+    flex: 1; /* Cột phải chiếm 1 phần (hẹp hơn) */
+}
+
+.profile-image {
+    width: 100%;
+    height: 250px;     /* Đặt chiều cao cố định cho khung */
+    border-radius: 8px; 
+    border: 1px solid #3c3c3c;
+    object-fit: contain; /* !!! THAY ĐỔI Ở ĐÂY: Hiển thị toàn bộ ảnh */
+    
+    opacity: 0; 
+    animation: fadeInContent 0.05s ease-out 0.2s; 
+    animation-fill-mode: forwards; 
+}
